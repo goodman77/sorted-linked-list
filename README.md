@@ -18,6 +18,7 @@ The list keeps values sorted automatically and supports integers or strings (not
 ## Requirements
 
 - PHP 8.1+
+- PHPUnit 10+
 - Composer
 - Docker (optional, for containerized development)
 
