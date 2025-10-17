@@ -1,0 +1,17 @@
+# Composer dependencies
+/vendor/
+
+# VSCode settings
+/.vscode/
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# PHPUnit cache
+.phpunit.result.cache
