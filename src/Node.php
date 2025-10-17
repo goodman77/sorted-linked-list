@@ -7,7 +7,7 @@ namespace SortedLinkedList;
 /**
  * Node class for SortedLinkedList.
  * Represents a single element in a linked list.
- * Holds a value mixed any type not inforced to (int|string) and a reference to the next node.
+ * Holds a value mixed any type, only inforced to (int|string) when added,  a reference to the next node.
  */
 class Node
 {

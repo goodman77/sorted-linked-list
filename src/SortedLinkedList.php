@@ -93,14 +93,14 @@ class SortedLinkedList implements IteratorAggregate, Countable
 
         // Allow only integer or string
         if (!in_array($valueType, ['integer', 'string'], true)) {
-            throw new InvalidArgumentException("Only int or string values are allowed.");
+            throw new InvalidArgumentException("Int or string values are allowed inthe linked list.");
         }
 
         // Set list type on first insertion
         if (null === $this->type) {
             $this->type = $valueType;
         } elseif ($this->type !== $valueType) {
-            throw new InvalidArgumentException("Cannot mix {$this->type} with {$valueType}.");
+            throw new InvalidArgumentException("Mixing type of {$this->type} with {$valueType} not allowed.");
         }
     }
 
@@ -155,7 +155,7 @@ class SortedLinkedList implements IteratorAggregate, Countable
     }
 
     /**
-     * Convert the linked list into a plain stringv with arrows
+     * Convert the linked list into a plain string with arrows
      *
      * @return array string with arrow seperation
      */
@@ -189,7 +189,7 @@ class SortedLinkedList implements IteratorAggregate, Countable
     }
 
     /**
-     * Check if a certain value is foundin the linked list
+     * Check if a certain value is found in the linked list
      * @param mixed $value value to be found
      * 
      * @return bool true if found, false if not
