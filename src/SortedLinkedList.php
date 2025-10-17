@@ -155,6 +155,16 @@ class SortedLinkedList implements IteratorAggregate, Countable
     }
 
     /**
+     * Convert the linked list into a plain stringv with arrows
+     *
+     * @return array string with arrow seperation
+     */
+    public function __toString(): string
+    {
+        return implode(' -> ', $this->toArray());
+    }
+
+    /**
      * Get an iterator for the list to allow foreach iteration.
      *
      * @return Traversable Yields each node value in sorted order
@@ -166,5 +176,62 @@ class SortedLinkedList implements IteratorAggregate, Countable
             yield $current->value;
             $current = $current->next;
         }
+    }
+
+    /**
+     * clear the linked list 
+     */
+    public function clear()
+    {
+        $this->head = null;
+        $this->type = null;
+        $this->count = 0;
+    }
+
+    /**
+     * Check if a certain value is foundin the linked list
+     * @param mixed $value value to be found
+     * 
+     * @return bool true if found, false if not
+     */
+    public function exists(mixed $value): bool
+    {
+        $current = $this->head;
+        while (null !== $current) {
+            if ($current->value === $value) {
+                return true;
+            }
+            $current = $current->next;
+        }
+
+        return false;
+    }
+
+    /**
+     * Find the first element of the linked list
+     * 
+     * @return mixed value of the head otherwise null
+     */
+    public function first(): mixed
+    {
+        return null !== $this->head ? $this->head->value : null;
+    }
+
+    /**
+     * Find the last element of the linked list
+     * 
+     * @return mixed value of the head otherwise null
+     */
+    public function last(): mixed
+    {
+        $current = $this->head;
+
+        if (null === $current) return null;
+
+        while (null !== $current->next) {
+            $current = $current->next;
+        }
+
+        return $current->value;
     }
 }
