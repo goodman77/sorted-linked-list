@@ -28,7 +28,6 @@ The list keeps values sorted automatically and supports integers or strings (not
 Clone the repository:
 
 ```bash
-git clone <YOUR_REPO_URL>
+git clone
 cd sorted-linked-list
 composer install
->>>>>>> master
